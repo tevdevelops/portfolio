@@ -1,0 +1,77 @@
+@mixin breakpoint($device) {
+  @media only screen and (min-width: $device) {
+    @content;
+  }
+}
+
+@keyframes slideUpFade {
+  0% {
+    opacity: 0;
+    transform: translateY(var(--startPosition));
+  }
+
+  50% {
+    opacity: var(--startPosition);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/**
+ * Text Slide Up
+ */
+@mixin nth-animation-delay($items: 3, $time: 0.2s) {
+  @for $i from 1 through $items {
+    &:nth-child(#{$i}) {
+      animation-delay: $time * ($i - 1);
+    }
+  }
+}
+
+/**
+ * Animations
+ */
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slide-down {
+  0% {
+    transform: translate3d(0, -30%, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes card-slide-up {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 25%, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
