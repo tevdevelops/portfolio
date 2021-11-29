@@ -1,16 +1,11 @@
 <template>
-  <v-app>
-    <!-- <Header /> -->
-    <SideNav />
+  <div class="application">
+    <Header />
 
-    <v-main>
-      <v-container fluid>
-        <slot />
-      </v-container>
-    </v-main>
-
-    <v-footer app></v-footer>
-  </v-app>
+    <main>
+      <slot />
+    </main>
+  </div>
 </template>
 
 <script>

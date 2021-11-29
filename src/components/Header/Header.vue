@@ -1,11 +1,5 @@
 <template>
-  <v-app-bar color="white" elevate-on-scroll app>
-    <v-app-bar-nav-icon></v-app-bar-nav-icon>
-
-    <v-toolbar-title>Title</v-toolbar-title>
-
-    <v-spacer></v-spacer>
-  </v-app-bar>
+  <header class="header"></header>
 </template>
 
 <script>

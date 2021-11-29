@@ -23,6 +23,7 @@ function addStyleResource(rule) {
 module.exports = {
   siteName: 'TevDevelops | Tevin Rivera',
   siteDescription: '',
+  titleTemplate: '%s | <siteName>',
   plugins: [
     {
       use: 'gridsome-plugin-gtm',
@@ -32,7 +33,17 @@ module.exports = {
         debug: true,
       },
     },
+    {
+      use: '@gridsome/source-filesystem',
+      options: {
+        typeName: 'BlogPost',
+        path: './content/blog/**/*.md',
+      },
+    },
   ],
+  templates: {
+    BlogPost: '/blog/:slug',
+  },
   chainWebpack(config) {
     // Load variables for all vue-files
     const types = ['vue-modules', 'vue', 'normal-modules', 'normal']

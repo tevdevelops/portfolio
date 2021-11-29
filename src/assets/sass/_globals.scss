@@ -1,0 +1,28 @@
+body {
+  background-color: $black;
+  color: $white;
+}
+
+.section {
+  padding: 20px;
+
+  &--full-width {
+    padding: 20px 0;
+  }
+
+  @include breakpoint($tablet) {
+    padding: 30px;
+
+    &--full-width {
+      padding: 30px 0;
+    }
+  }
+
+  @include breakpoint($desktop) {
+    padding: 50px 60px;
+
+    &--full-width {
+      padding: 50px 0;
+    }
+  }
+}

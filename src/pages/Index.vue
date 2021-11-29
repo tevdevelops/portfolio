@@ -1,33 +1,76 @@
 <template>
   <Layout>
-
-    <!-- Learn how to use images here: https://gridsome.org/docs/images -->
-    <g-image alt="Example image" src="~/favicon.png" width="135" />
-
-    <h1>Hello, world!</h1>
-
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur excepturi labore tempore expedita, et iste tenetur suscipit explicabo! Dolores, aperiam non officia eos quod asperiores
-    </p>
-
-    <p class="home-links">
-      <a href="https://gridsome.org/docs/" target="_blank" rel="noopener">Gridsome Docs</a>
-      <a href="https://github.com/gridsome/gridsome" target="_blank" rel="noopener">GitHub</a>
-    </p>
-
+    <div class="template--home">
+      <div class="swiper page-slider swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="page-slider__slide--container">
+              Logo Animation Here*
+              <h2>Full Stack Web Developer</h2>
+              <p>Some quick about text about myself</p>
+            </div>
+          </div>
+          <div class="swiper-slide">Portfolio Coming Soon</div>
+          <div class="swiper-slide">Blog Posts</div>
+        </div>
+        <div class="swiper-scrollbar"></div>
+      </div>
+    </div>
   </Layout>
 </template>
 
 <script>
+import Swiper from 'swiper'
+import 'swiper/css/swiper.css'
+
 export default {
-  metaInfo: {
-    title: 'Hello, world!'
-  }
+  data() {
+    return {}
+  },
+
+  computed: {},
+
+  mounted() {
+    const vue = this
+
+    var homeSlider = new Swiper('.page-slider', {
+      speed: 500,
+      slidesPerView: 1,
+      freeMode: false,
+      keyboard: true,
+      effect: 'cube',
+      mousewheel: {
+        enabled: true,
+        sticky: true,
+      },
+      scrollbar: {
+        el: '.swiper-scrollbar',
+        draggable: true,
+      },
+    })
+  },
 }
 </script>
 
-<style>
-.home-links a {
-  margin-right: 1rem;
+<style lang="scss">
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+
+.template--home {
+  height: 100vh;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 </style>
