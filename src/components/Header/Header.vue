@@ -49,6 +49,9 @@
         <g-link to="/about/">Background</g-link>
         <g-link to="/portfolio/">Portfolio</g-link>
         <g-link to="/blog/">Blog</g-link>
+        <a href="https://www.buymeacoffee.com/tevdevelops" target="_blank">
+          Support
+        </a>
       </nav>
     </div>
 
@@ -83,13 +86,13 @@ export default {
       top: 0;
       left: 0;
       width: 100%;
-      height: $frameSizeDesktop;
+      height: $frameSizeMobile;
     }
 
     &--right {
       top: 0;
       right: 0;
-      width: $frameSizeDesktop;
+      width: $frameSizeMobile;
       height: 100%;
     }
 
@@ -97,14 +100,14 @@ export default {
       bottom: 0;
       left: 0;
       width: 100%;
-      height: $frameSizeDesktop;
+      height: $frameSizeMobile;
       z-index: $header;
     }
 
     &--left {
       bottom: 0;
       left: 0;
-      width: $frameSizeDesktop;
+      width: $frameSizeMobile;
       height: 100%;
     }
   }
@@ -144,6 +147,23 @@ export default {
       svg {
         width: auto;
         height: 25px;
+      }
+    }
+  }
+
+  @include breakpoint($desktop) {
+    &__frame {
+      &--top {
+        height: $frameSizeDesktop;
+      }
+      &--right {
+        width: $frameSizeDesktop;
+      }
+      &--bottom {
+        height: $frameSizeDesktop;
+      }
+      &--left {
+        width: $frameSizeDesktop;
       }
     }
   }
