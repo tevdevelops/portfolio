@@ -2,7 +2,7 @@
   <div class="application">
     <Header />
 
-    <main>
+    <main class="content">
       <slot />
     </main>
   </div>
@@ -32,4 +32,9 @@ query {
 }
 </static-query>
 
-<style></style>
+<style lang="scss">
+.content {
+  @include breakpoint($desktop) {
+  }
+}
+</style>
