@@ -15,13 +15,22 @@
         <!-- <g-link to="/" class="header__logo" aria-label="Home">
           <LogoSquare />
         </g-link> -->
-        <a class="hover--underline" @click="hackHashChange" href="/#about"
+        <a
+          class="hover--underline"
+          @click.prevent="hackHashChange"
+          href="/#about"
           >About</a
         >
-        <a class="hover--underline" @click="hackHashChange" href="/#portfolio"
+        <a
+          class="hover--underline"
+          @click.prevent="hackHashChange"
+          href="/#portfolio"
           >Portfolio</a
         >
-        <a class="hover--underline" @click="hackHashChange" href="/#blog"
+        <a
+          class="hover--underline"
+          @click.prevent="hackHashChange"
+          href="/#blog"
           >Blog</a
         >
         <a
@@ -91,8 +100,18 @@ export default {
 
   methods: {
     hackHashChange(event) {
-      console.log('hacking')
-      // window.location.hash = event.target.href.split('#').pop()
+      const hash_str = event.target.href.split('#').pop()
+      if (window.location.pathname == '/') {
+        window.location.hash = hash_str
+      } else {
+        const new_url =
+          window.location.protocol +
+          '//' +
+          window.location.host +
+          '/#' +
+          hash_str
+        window.location.href = new_url
+      }
     },
   },
 }

@@ -134,14 +134,14 @@ export default {
       //   key: '',
       // },
       hashNavigation: {
-        replaceState: false,
+        replaceState: true,
         watchState: true,
       },
       // effect: 'slide',
-      effect: 'fade',
-      fadeEffect: {
-        crossFade: true,
-      },
+      // effect: 'fade',
+      // fadeEffect: {
+      //   crossFade: true,
+      // },
       // effect: 'cube',
       // cubeEffect: {
       //   slideShadows: false,
@@ -151,6 +151,7 @@ export default {
         enabled: true,
         sticky: true,
       },
+      simulateTouch: false,
       // scrollbar: {
       //   el: '.swiper-scrollbar',
       //   draggable: true,
