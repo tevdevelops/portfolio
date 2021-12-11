@@ -34,10 +34,10 @@ query {
 
 <style lang="scss">
 .content {
-  padding: $frameSizeMobile;
+  padding: $frameHeight $frameWidth;
 
   @include breakpoint($desktop) {
-    padding: $frameSizeDesktop;
+    padding: $frameHeightDesktop $frameWidthDesktop;
   }
 }
 </style>

@@ -5,7 +5,8 @@ author: tevdevelops
 tags:
   - Development
   - Design
-  - Series
+series: Relearning Design
+seriesNum: '001'
 excerpt: I’ve realized that I need to reinforce my fundamental knowledge and understanding of the design principles that power Web Design.
 date: 2021-11-29
 featuredImage: blog/001/featured.jpg

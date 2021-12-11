@@ -1,21 +1,31 @@
 $black: #000000;
 $white: #ffffff;
 $beige: #f6f6f6;
-$darkGray: #5f5f5f;
+$darkGray: #141414;
+$darkGrey: #141414;
 $blueyGray: #939598;
 $gray: #999999;
 $mediumGray: #7c7e80;
 $lightGray: #e2e2e2;
 $red: #ed1c24;
+$orange: #f79115;
 $borderGray: #888888;
+
+$accent: $orange;
 
 $tablet: 768px;
 $tabletLandscape: 1024px;
 $desktop: 1280px;
 $desktopWide: 1800px;
 
-$frameSizeMobile: 40px;
-$frameSizeDesktop: 55px;
+$frameHeight: 35px;
+$frameWidth: 30px;
+$frameHeightDesktop: 55px;
+$frameWidthDesktop: 46px;
+
+$mobilePadding: 1.25rem;
+$tabletPadding: 2rem;
+$desktopPadding: 5rem;
 
 $background: 0;
 $midground: 1;
@@ -23,3 +33,5 @@ $foreground: 2;
 $header: 3;
 $overHeader: 4;
 $overlay: 5;
+
+$border: 1px solid $darkGray;

@@ -1,0 +1,57 @@
+.flex {
+  &--row {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &--column {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &--center {
+    justify-content: center;
+    align-items: center;
+  }
+
+  &--between {
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start;
+
+    &--2-col {
+      > * {
+        flex-basis: 50%;
+      }
+    }
+  }
+}
+
+.grid {
+  display: grid;
+}
+
+.max-width-height {
+  width: 100%;
+  height: 100%;
+}
+
+.section-overflow-x {
+  overflow-x: scroll;
+}
+
+.section-overflow-y {
+  overflow-y: scroll;
+}
+
+.hover {
+  &--underline {
+    @include line-hover;
+  }
+}

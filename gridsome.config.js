@@ -12,18 +12,20 @@ function addStyleResource(rule) {
     .loader('style-resources-loader')
     .options({
       patterns: [
-        path.resolve(__dirname, './src/assets/sass/_mixins.scss'),
-        path.resolve(__dirname, './src/assets/sass/_fonts.scss'),
         path.resolve(__dirname, './src/assets/sass/_variables.scss'),
+        path.resolve(__dirname, './src/assets/sass/_mixins.scss'),
+        path.resolve(__dirname, './src/assets/sass/_resets.scss'),
+        path.resolve(__dirname, './src/assets/sass/_fonts.scss'),
         path.resolve(__dirname, './src/assets/sass/_globals.scss'),
+        path.resolve(__dirname, './src/assets/sass/_utilities.scss'),
       ],
     })
 }
 
 module.exports = {
   siteName: 'TevDevelops | Tevin Rivera',
-  siteDescription: '',
-  titleTemplate: '%s | <siteName>',
+  siteDescription:
+    'Tevin Rivera is a Full Stack Web Developer based in Philadeplhia, PA. Currently employed at King & Partners. Contact for Freelance opportunities.',
   plugins: [
     {
       use: 'gridsome-plugin-gtm',
