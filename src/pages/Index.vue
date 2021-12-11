@@ -39,7 +39,7 @@
           </div>
 
           <div data-hash="portfolio" class="swiper-slide portfolio">
-            <h2>Portfolio Coming Soon</h2>
+            <h2 class="portfolio__header">Portfolio Coming Soon</h2>
           </div>
 
           <div data-hash="blog" class="swiper-slide blog">
@@ -186,6 +186,8 @@ export default {
   justify-content: center;
   align-items: center;
   padding: 1.25rem;
+  overflow-y: scroll;
+  @include hide-scrollbar;
 
   @include breakpoint($tablet) {
     padding: 1.75rem;
@@ -201,18 +203,19 @@ export default {
 
   .logo {
     &__container {
-      margin: 0 auto 30px;
+      margin: 0 auto 1rem;
+      width: 6.25rem;
+      height: 6.25rem;
 
       svg {
-        width: 9rem;
-        height: 9rem;
+        widows: 100%;
         margin: 0 auto;
       }
     }
   }
 
   h1 {
-    margin-bottom: 20px;
+    margin-bottom: 1rem;
   }
 
   @include breakpoint($tablet) {
@@ -226,6 +229,14 @@ export default {
         display: none;
       }
     }
+
+    .logo {
+      &__container {
+        margin: 0 auto 1.5rem;
+        width: 9rem;
+        height: 9rem;
+      }
+    }
   }
 
   @include breakpoint($tabletLandscape) {
@@ -235,6 +246,14 @@ export default {
     &__copy {
       max-width: 725px;
     }
+  }
+}
+
+.portfolio {
+  text-align: center;
+
+  &__header {
+    @include h5;
   }
 }
 

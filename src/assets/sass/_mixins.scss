@@ -16,22 +16,6 @@
   align-items: center;
 }
 
-@keyframes slideUpFade {
-  0% {
-    opacity: 0;
-    transform: translateY(var(--startPosition));
-  }
-
-  50% {
-    opacity: var(--startPosition);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 /**
  * Text Slide Up
  */
@@ -110,4 +94,14 @@
   100% {
     opacity: 1;
   }
+}
+
+@mixin hide-scrollbar {
+  &::-webkit-scrollbar {
+    width: 0 !important;
+    height: 0 !important;
+  }
+  scrollbar-width: none;
+  overflow: -moz-scrollbars-none;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
 }

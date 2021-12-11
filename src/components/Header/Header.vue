@@ -188,9 +188,10 @@ export default {
   }
 
   &__nav {
-    @include flex-between;
+    @include flex-center;
     width: 100%;
     height: 100%;
+    gap: 40px;
 
     a {
       @include nav-link;
@@ -202,6 +203,8 @@ export default {
 
     &--main {
       // display: none;
+      @include flex-between;
+      gap: 10px;
       overflow-x: scroll;
     }
 
@@ -230,6 +233,10 @@ export default {
     &__nav {
       @include flex-center;
       gap: 2.5rem;
+
+      &--main {
+        gap: 2.5rem;
+      }
     }
   }
 
