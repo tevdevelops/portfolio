@@ -92,7 +92,7 @@ export default {
   methods: {
     hackHashChange(event) {
       console.log('hacking')
-      window.location.hash = event.target.href.split('#').pop()
+      // window.location.hash = event.target.href.split('#').pop()
     },
   },
 }
