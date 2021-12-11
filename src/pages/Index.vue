@@ -201,6 +201,10 @@ export default {
 .landing {
   text-align: center;
 
+  @media only screen and (max-height: 600px) {
+    align-items: flex-start;
+  }
+
   .logo {
     &__container {
       margin: 0 auto 1rem;
