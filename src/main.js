@@ -16,10 +16,10 @@ import {
   faLinkedinIn,
 } from '@fortawesome/free-brands-svg-icons'
 import { faLongArrowAltLeft } from '@fortawesome/free-solid-svg-icons'
-import '@fortawesome/fontawesome-svg-core/styles.css'
 
-config.autoAddCss = false
 library.add(faGithub, faTwitter, faInstagram, faLinkedinIn, faLongArrowAltLeft)
+
+import '../node_modules/swiper/css/swiper.css'
 
 export default function(Vue, { appOptions, head }) {
   head.link.push({
