@@ -30,9 +30,9 @@ module.exports = {
     {
       use: 'gridsome-plugin-gtm',
       options: {
-        id: '',
-        enabled: false,
-        debug: true,
+        id: 'GTM-TF6QN4X',
+        enabled: true,
+        debug: false,
       },
     },
     {
