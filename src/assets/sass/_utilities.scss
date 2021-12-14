@@ -55,3 +55,9 @@
     @include line-hover;
   }
 }
+
+.animate {
+  &--up {
+    display: block;
+  }
+}

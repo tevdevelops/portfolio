@@ -25,7 +25,7 @@ function addStyleResource(rule) {
 module.exports = {
   siteName: 'TevDevelops | Tevin Rivera',
   siteDescription:
-    'Tevin Rivera is a Full Stack Web Developer based in Philadeplhia, PA. Currently employed at King & Partners. Contact for Freelance opportunities.',
+    'Tevin Rivera is a Full Stack Web Developer based in Philadelphia, PA. Currently employed at King & Partners. Contact for Freelance opportunities.',
   plugins: [
     {
       use: 'gridsome-plugin-gtm',

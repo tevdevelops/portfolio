@@ -9,26 +9,29 @@
                 <LogoSquareBlack />
               </div>
               <div class="landing__copy">
-                <h1>Creative Developer</h1>
+                <h1 class="animate--up">Creative Developer</h1>
                 <p>
-                  Yerp 👋 (hello in Philly)
+                  <span class="animate--up">Yerp 👋 (hello in Philly)</span>
                   <br />
+                  <span class="animate--up"
+                    >I'm <strong><em>Tevin Rivera</em></strong> 🇺🇸 🇳🇮, a Full
+                    Stack Web Developer based in Philly. Currently, I build
+                    headless Vue / Nuxt / WordPress sites at
+                    <a href="http://kingandpartners.com/" target="_blank"
+                      >King &#38; Partners</a
+                    >.</span
+                  >
                   <br />
-                  I'm <strong><em>Tevin Rivera</em></strong> 🇺🇸 🇳🇮, a Full Stack
-                  Web Developer based in Philly. Currently, I build headless Vue
-                  / Nuxt / WordPress sites at
-                  <a href="http://kingandpartners.com/" target="_blank"
-                    >King &#38; Partners</a
-                  >.
-                  <br />
-                  <br />
-                  I'm passionate about
-                  <strong><em>well designed,</em></strong> highly immersive
-                  digital experiences. I'm constantly improving my
-                  <strong><em>Full Stack Javascript</em></strong> skills as well
-                  as learning <a href="https://threejs.org/">Three JS</a> so
-                  that I can create stunning <strong><em>3D sites</em></strong
-                  >. Follow my journey on my <a href="/#blog">blog</a>.
+                  <span class="animate--up"
+                    >I'm passionate about
+                    <strong><em>well designed,</em></strong> highly immersive
+                    digital experiences. I'm constantly improving my
+                    <strong><em>Full Stack Javascript</em></strong> skills as
+                    well as learning
+                    <a href="https://threejs.org/">Three JS</a> so that I can
+                    create stunning <strong><em>3D sites</em></strong
+                    >. Follow my journey on my <a href="/#blog">blog</a>.</span
+                  >
                   <!-- I'm passionate about
                   <strong><em>well designed,</em></strong> highly immersive
                   digital experiences. I am on the journey of becoming a leader
@@ -83,7 +86,7 @@
 import LogoSquareBlack from '~/assets/svgs/logo-square-black.svg?inline'
 import Swiper from 'swiper'
 
-// import anime from 'animejs/lib/anime.es.js'
+import anime from 'animejs/lib/anime.es.js'
 
 import Grid from '~/components/Grid/Grid.vue'
 import Card from '~/components/Card/Card.vue'
@@ -98,6 +101,7 @@ export default {
   data() {
     return {
       slider: null,
+      anim_timeline: null,
     }
   },
 
@@ -114,59 +118,66 @@ export default {
       }
     },
 
-    updateSlider(event) {
-      console.log('hi', event)
+    initSlider() {
+      const vue = this
+
+      this.slider = new Swiper('.page-slider', {
+        speed: 500,
+        loop: true,
+        loopedSlides: 3,
+        slidesPerView: 1,
+        freeMode: false,
+        keyboard: true,
+        hashNavigation: {
+          replaceState: true,
+          watchState: true,
+        },
+        mousewheel: {
+          enabled: true,
+          sticky: true,
+        },
+        simulateTouch: false,
+      })
+    },
+
+    animateLogo() {
+      console.log('animating logo')
+      this.anim_timeline = anime.timeline({
+        loop: false,
+        duration: 1200,
+        easing: 'cubicBezier(.5, .05, .1, .3)',
+        direction: 'alternate',
+      })
+
+      this.anim_timeline.add({
+        targets: '.logo__container svg path',
+        strokeDashoffset: [anime.setDashoffset, 0],
+        delay: anime.stagger(105),
+      })
+
+      this.anim_timeline.add({
+        targets: '.logo__container svg path',
+        fill: '#000000',
+        fillOpacity: [0, 1],
+        duration: 400,
+      })
+
+      this.anim_timeline.add({
+        targets: '.animate--up',
+        opacity: [0, 1],
+        translateY: [25, 0],
+        delay: anime.stagger(200),
+      })
     },
   },
 
   mounted() {
-    const vue = this
+    this.initSlider()
 
-    this.slider = new Swiper('.page-slider', {
-      speed: 500,
-      loop: true,
-      loopedSlides: 3,
-      slidesPerView: 1,
-      freeMode: false,
-      keyboard: true,
-      // history: {
-      //   replaceState: true,
-      //   key: '',
-      // },
-      hashNavigation: {
-        replaceState: true,
-        watchState: true,
-      },
-      // effect: 'slide',
-      // effect: 'fade',
-      // fadeEffect: {
-      //   crossFade: true,
-      // },
-      // effect: 'cube',
-      // cubeEffect: {
-      //   slideShadows: false,
-      //   shadow: false,
-      // },
-      mousewheel: {
-        enabled: true,
-        sticky: true,
-      },
-      simulateTouch: false,
-      // scrollbar: {
-      //   el: '.swiper-scrollbar',
-      //   draggable: true,
-      // },
-    })
-
-    this.slider.on('hashChange', function() {
-      console.log('hash changed')
-    })
-
-    window.addEventListener('hashchange', this.updateSlider, false)
+    this.animateLogo()
   },
 
   beforeDestroy() {
-    window.removeEventListener('hashchange', this.updateSlider)
     this.slider.destroy()
   },
 }
@@ -212,7 +223,7 @@ export default {
       height: 6.25rem;
 
       svg {
-        widows: 100%;
+        width: 100%;
         margin: 0 auto;
       }
     }
