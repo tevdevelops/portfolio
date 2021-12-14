@@ -86,7 +86,7 @@
 import LogoSquareBlack from '~/assets/svgs/logo-square-black.svg?inline'
 import Swiper from 'swiper'
 
-import anime from 'animejs/lib/anime.es.js'
+import anime from 'animejs'
 
 import Grid from '~/components/Grid/Grid.vue'
 import Card from '~/components/Card/Card.vue'
