@@ -41,15 +41,32 @@
 </style>
 
 <page-query>
-  query blog($path: String){
-    blogPost: blogPost(path: $path){
-      id
-      title
-      slug
-      excerpt
-      featuredImage
-      content
-      tags
-    }
+query blogPost ($path: String!) {
+  blogPost: blogPost (path: $path) {
+    title
+    content
+    featuredImage
   }
+}
 </page-query>
+
+<script>
+export default {
+  name: 'BlogPost',
+  metaInfo() {
+    return {
+      title: this.$page.blogPost.title,
+      meta: [
+        {
+          name: 'author',
+          content: 'Tevin Rivera',
+        },
+        {
+          name: 'og:image',
+          content: this.$page.blogPost.featuredImage,
+        },
+      ],
+    }
+  },
+}
+</script>

@@ -92,6 +92,16 @@ import Grid from '~/components/Grid/Grid.vue'
 import Card from '~/components/Card/Card.vue'
 
 export default {
+  name: 'Home',
+  metaInfo: {
+    title: 'Home',
+    meta: [
+      {
+        name: 'author',
+        content: 'Tevin Rivera',
+      },
+    ],
+  },
   components: {
     LogoSquareBlack,
     Grid,
