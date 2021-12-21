@@ -4,7 +4,7 @@
       <g-image :src="image" class="card__asset card__asset--image" />
     </div>
     <div class="card__body">
-      <p class="card__tag">{{ tag }}</p>
+      <p v-if="tag" class="card__tag">{{ tag }}</p>
       <p class="card__header">{{ header }}</p>
       <p class="card__excerpt">{{ copy }}</p>
     </div>
@@ -39,22 +39,10 @@ export default {
   position: relative;
   text-decoration: none;
 
-  &__asset-container {
-  }
-
   &__body {
-    // position: absolute;
-    // top: 0;
-    // right: 0;
-    // bottom: 0;
-    // left: 0;
-    // background: hsla(0, 0, 0, 0.3);
-    // padding: 15px;
-    // display: flex;
-    // justify-content: center;
-    // align-items: flex-end;
     padding: 1rem 0 1.25rem;
     border-bottom: $border;
+    transition: 300ms ease-in-out border-bottom;
   }
 
   &__tag {
@@ -72,10 +60,14 @@ export default {
   }
 
   @include breakpoint($desktop) {
-    transition: 500ms cubic-bezier(0.85, 0, 0.15, 1) transform;
+    transition: 300ms ease-in-out transform;
 
     &:hover {
       transform: translateY(-20px);
+
+      .card__body {
+        border-bottom: 1px solid $orange;
+      }
     }
   }
 }

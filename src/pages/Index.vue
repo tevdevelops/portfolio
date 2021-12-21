@@ -42,7 +42,14 @@
           </div>
 
           <div data-hash="portfolio" class="swiper-slide portfolio">
-            <h2 class="portfolio__header">Portfolio Coming Soon</h2>
+            <div class="flex--column flex--center max-width-height">
+              <h2 class="portfolio__header">Portfolio</h2>
+              <div class="grid portfolio__grid">
+                <template v-for="(post, index) in $page.portfolioPosts.edges">
+                  <Card :key="index" v-bind="createPortfolioProps(post.node)" />
+                </template>
+              </div>
+            </div>
           </div>
 
           <div data-hash="blog" class="swiper-slide blog">
@@ -50,13 +57,12 @@
               <h2 class="blog__header">Blog Posts</h2>
               <div class="grid blog__grid">
                 <template v-for="(post, index) in $page.posts.edges">
-                  <Card :key="index" v-bind="createProps(post.node)" />
+                  <Card :key="index" v-bind="createPostProps(post.node)" />
                 </template>
               </div>
             </div>
           </div>
         </div>
-        <!-- <div class="swiper-scrollbar"></div> -->
       </div>
     </div>
   </Layout>
@@ -64,22 +70,36 @@
 
 <page-query>
   query {
-  posts: allBlogPost {
-    edges {
-      node {
-        id
-      title
-      path
-      series
-      seriesNum
-      excerpt
-      featuredImage
-      content
-      tags
+    posts: allBlogPost {
+      edges {
+        node {
+          id
+        title
+        path
+        series
+        seriesNum
+        excerpt
+        featuredImage
+        content
+        tags
+        }
+      }
+    }
+    portfolioPosts: allPortfolioPost {
+      edges {
+        node {
+          id
+        title
+        path
+        excerpt
+        featuredImage
+        content
+        tags
+        liveSite
+        }
       }
     }
   }
-}
 </page-query>
 
 <script>
@@ -118,10 +138,20 @@ export default {
   computed: {},
 
   methods: {
-    createProps(item) {
+    createPostProps(item) {
       return {
         header: item.title,
         tag: `${item.seriesNum} | ${item.series}`,
+        copy: item.excerpt,
+        image: item.featuredImage,
+        link: item.path,
+      }
+    },
+
+    createPortfolioProps(item) {
+      return {
+        header: item.title,
+        tag: item.tags.join(' | '),
         copy: item.excerpt,
         image: item.featuredImage,
         link: item.path,
@@ -274,15 +304,8 @@ export default {
   }
 }
 
+.blog,
 .portfolio {
-  text-align: center;
-
-  &__header {
-    @include h5;
-  }
-}
-
-.blog {
   overflow-y: scroll;
 
   &__header {

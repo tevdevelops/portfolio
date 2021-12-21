@@ -42,9 +42,17 @@ module.exports = {
         path: './content/blog/**/*.md',
       },
     },
+    {
+      use: '@gridsome/source-filesystem',
+      options: {
+        typeName: 'PortfolioPost',
+        path: './content/portfolio/**/*.md',
+      },
+    },
   ],
   templates: {
     BlogPost: '/blog/:slug',
+    PortfolioPost: '/portfolio/:slug',
   },
   chainWebpack(config) {
     // Load variables for all vue-files
