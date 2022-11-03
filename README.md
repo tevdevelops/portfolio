@@ -6,6 +6,8 @@
 
 ### 2. Setup
 
+Node Version: `12.7`
+
 1. `yarn install`
 2. `gridsome develop` to start a local dev server at `http://localhost:8080`
 3. Happy coding 🎉🙌
