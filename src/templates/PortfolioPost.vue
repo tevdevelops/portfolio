@@ -40,6 +40,21 @@
     margin: 1.25rem 0;
   }
 
+  .portfolio {
+    &__video {
+      &--holder {
+        display: inline-block;
+        padding: 1rem 2rem;
+        background: #d7cdc4;
+
+        video {
+          border-radius: 12px;
+          box-shadow: 1px 3px 3px 0px rgba(0, 0, 0, 0.2);
+        }
+      }
+    }
+  }
+
   @include breakpoint($desktop) {
     padding: 3rem $desktopPadding calc(3rem + #{$frameHeightDesktop});
   }

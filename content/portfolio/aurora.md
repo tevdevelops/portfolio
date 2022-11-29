@@ -13,8 +13,8 @@ featuredImage: portfolio/aurora/featured.jpg
 
 # Aurora Anguilla
 
-<video class="portfolio__video" poster="aurora/aurora-site-scroll-poster.jpg" muted playsinline loop autoplay>
-  <source src="aurora/aurora-site-scroll.mp4" type="video/mp4">
+<video class="portfolio__video" poster="/portfolio/aurora/aurora-site-scroll-poster.jpg" muted playsinline loop autoplay>
+  <source src="/portfolio/aurora/aurora-site-scroll.mp4" type="video/mp4">
 </video>
 
 Live Site: https://www.auroraanguilla.com/
