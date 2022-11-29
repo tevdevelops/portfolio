@@ -81,7 +81,7 @@
 
     <div class="header__frame header__frame--left">
       <div class="header__container">
-        <p class="">Still in Beta | Version: 0.1</p>
+        <p class="">Still in Beta | Version: 0.3</p>
       </div>
     </div>
   </header>
